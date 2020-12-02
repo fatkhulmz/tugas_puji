@@ -187,9 +187,44 @@ Route::group(['middleware'=>['preventbackbutton','auth']], function(){
     Route::get('/dashboard.show/{id}', 'UserController@show')->name('dashboard.show');
 
     //SHOW DATA ADMIN
-    Route::get('/dokumen.show/kuisioner/{id}', 'DokumenController@kuisioner')->name('dokumen.show');
+
+    //kuisioner
+    Route::get('/dokumen.show/kuisioner/{id}', 'DokumenController@kuisioner');
     Route::get('/show-data/kuisioner/{id}/{dokumen}', 'ShowDataController@kuisioner');
 
+    //rancangan pembangunan
+    Route::get('/dokumen.show/rancangan_pembangunan/{id}', 'DokumenController@rancangan_pembangunan');
+    Route::get('/show-data/rancangan_pembangunan/{id}/{dokumen}', 'ShowDataController@rancangan_pembangunan');
+
+    //Pemjaminan mutu
+    Route::get('/dokumen.show/penjaminan_mutu/{id}', 'DokumenController@penjaminan_mutu');
+    Route::get('/show-data/penjaminan_mutu/{id}/{dokumen}', 'ShowDataController@penjaminan_mutu');
+
+    //Standar Operasional
+    Route::get('/dokumen.show/standar_operasional/{id}', 'DokumenController@standar_operasional');
+    Route::get('/show-data/standar_operasional/{id}/{dokumen}', 'ShowDataController@standar_operasional');
+
+    //Pendidikan Pelatihan
+    Route::get('/dokumen.show/pendidikan_pelatihan/{id}', 'DokumenController@pendidikan_pelatihan');
+    Route::get('/show-data/pendidikan_pelatihan/{id}/{dokumen}', 'ShowDataController@pendidikan_pelatihan');
+
+    //Analisis Kebijakan
+    Route::get('/dokumen.show/analisis_kebijakan/{id}', 'DokumenController@analisis_kebijakan');
+    Route::get('/show-data/analisis_kebijakan/{id}/{dokumen}', 'ShowDataController@analisis_kebijakan');
+
+    //Manajemen Sumber
+     Route::get('/dokumen.show/manajemen_sumber/{id}', 'DokumenController@manajemen_sumber');
+     Route::get('/show-data/manajemen_sumber/{id}/{dokumen}', 'ShowDataController@manajemen_sumber');
+
+    //Manajemen Resiko
+    Route::get('/dokumen.show/manajemen_resiko/{id}', 'DokumenController@manajemen_resiko');
+    Route::get('/show-data/manajemen_resiko/{id}/{dokumen}', 'ShowDataController@manajemen_resiko');
+
+    //pengukuran Kinerja
+    Route::get('/dokumen.show/pengukuran_kinerja/{id}', 'DokumenController@pengukuran_kinerja');
+    Route::get('/show-data/pengukuran_kinerja/{id}/{dokumen}', 'ShowDataController@pengukuran_kinerja');
+ 
+    //Registrasi
     Route::get('regis', function(){
         return view('auth/register');
     });
